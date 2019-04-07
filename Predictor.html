@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Player Performance Estimator</title>
+    <link rel="stylesheet" href="style.css">
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
+    <script src='http://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js'></script>
+    <script type="text/javascript" src="script.js"></script>
+</head>
+<body>
+    <h1 class = "mainpage_headers fadeIn" id="heading_title"> Player Performance Estimator </h1>
+    
+    <div class='login_div'>
+        <div class='innerdiv1'>
+            <h2 style="color:#fff;">Please fill out the training and wellness information:</h2>
+            
+            <h1 style="color:#fff;">ACTIVITY INFORMATION</h1>
+            <div>
+                <h2 style="color: #4b89bc">TRAINING SESSION TYPE</h2>
+                <label class="container" style="color: #fff; font-size: 20px">Mobility
+                    <input type="radio" name="training" value="mobility">
+                    <span class="checkmark"></span>
+                </label>
+                <label class="container" style="color: #fff; font-size: 20px">Conditioning
+                    <input type="radio" name="training" value="recovery">
+                    <span class="checkmark"></span>
+                </label>
+                <label class="container" style="color: #fff; font-size: 20px">Skills
+                    <input type="radio" name="training" value="skills">
+                    <span class="checkmark"></span>
+                </label>
+                <label class="container" style="color: #fff; font-size: 20px">Speed
+                    <input type="radio" name="training" value="speed">
+                    <span class="checkmark"></span>
+                </label>
+                <label class="container" style="color: #fff; font-size: 20px">Strength
+                    <input type="radio" name="training" value="strength">
+                    <span class="checkmark"></span>
+                </label>
+            </div>
+            <br>
+            <div>
+                <h2 style="color: #4b89bc">DURATION (in minutes)</h2>
+                <input type="text" id="duration" name="duration" placeholder="Minutes of Training">
+            </div>
+            <br>
+            <div>
+                <h2 style="color: #4b89bc">DAILY LOAD</h2>
+                <input type="text" id="dailyload" name="dailyload" placeholder="Daily Load Amount">
+            </div>
+            <br>
+            <div>
+                <h2 style="color: #4b89bc">ACUTE LOAD</h2>
+                <input type="text" id="acuteload" name="acuteload" placeholder="Acute Load Amount">
+            </div>
+            <br>
+            <br>
+            
+            <h1 style="color:#fff;">LIFE STYLE</h1>
+            <div>
+                <h2 style="color: #4b89bc">DESIRE</h2>
+                <span class="limit">1</span>
+                <input type="range" min="1" max="7" value="1" class="slider" id="myRange">
+                <span class="limit">7</span>
+                <p class="limit">Desire Level: <span id="demo"></span></p>
+            </div>
+            <br>
+            <div>
+                <h2 style="color: #4b89bc">IRRITABILITY</h2>
+                <span class="limit">1</span>
+                <input type="range" min="1" max="7" value="1" class="slider" id="myRange2">
+                <span class="limit">7</span>
+                <p class="limit">Irritability Level: <span id="demo2"></span></p>
+            </div>
+            <br>
+            <div>
+                <h2 style="color: #4b89bc">SLEEP HOURS</h2>
+                <input type="text" id="sleephours" name="firstname" placeholder="Hours of sleep">
+            </div>
+            <br>
+            <div>
+                <h2 style="color: #4b89bc">NUTRITION</h2>
+                <label class="container" style="color: #fff; font-size: 20px">Poor
+                    <input type="radio" name="nutrition" value="poor">
+                    <span class="checkmark"></span>
+                </label>
+                <label class="container" style="color: #fff; font-size: 20px">Okay
+                    <input type="radio" name="nutrition" value="okay">
+                    <span class="checkmark"></span>
+                </label>
+                <label class="container" style="color: #fff; font-size: 20px">Excellent
+                    <input type="radio" name="nutrition" value="excellent">
+                    <span class="checkmark"></span>
+                </label>
+            </div>
+            <br>
+            <br>
+            <button id="button" class="button" type="submit">Submit Input to See Performance Results</button>
+            <br>
+            <br>
+
+            
+        </div>
+        <div class='innerdiv2'>
+            <h1 style="color:#fff;">RESULTS</h1>
+            <h2 style="color: #4b89bc">OPTIMAL METERS TO RUN</h2>
+            <h2 class="limit" id="results" style="text-align: center;">0 meters</h2>
+            <br>
+            <h2 style="color: #4b89bc" id="resultsstatus"></h2>
+            <h2 class="limit" id="resultsstatus2" style="text-align: center;"></h2>
+        </div>
+        
+    </div>
+
+
+<script>
+        var slider = document.getElementById("myRange");
+        var output = document.getElementById("demo");
+        output.innerHTML = slider.value;
+
+        slider.oninput = function() {
+            output.innerHTML = this.value;
+        }
+        
+        var slider2 = document.getElementById("myRange2");
+        var output2 = document.getElementById("demo2");
+        output2.innerHTML = slider2.value;
+
+        slider2.oninput = function() {
+            output2.innerHTML = this.value;
+        }
+</script>
+
+</body>
+</html>
